@@ -1,28 +1,25 @@
-include:
- - template: Terraform/Base.gitlab-ci.yml  
- - template: Jobs/SAST-IaC.gitlab-ci.yml   
-
 stages:
- - validate
- - test
- - build
- - deploy
- - cleanup
-
-fmt:
- extends: .terraform:fmt
- needs: []
+  - validate
+  - plan
+  - apply
 
 validate:
- extends: .terraform:validate
- needs: []
-
-build:
- extends: .terraform:build
-
-deploy:
- extends: .terraform:deploy
- dependencies:
-   - build
- environment:
-   name: $TF_STATE_NAME
+  stage: validate
+  script:
+    - terraform validate
+plan:
+  stage: plan
+  script:
+    - terraform plan -out "planfile"
+  dependencies:
+    - validate
+  artifacts:
+    paths:
+      - planfile
+apply:
+  stage: apply
+  script:
+    - terraform apply -input=false "planfile"
+  dependencies:
+    - plan
+  when: manual
