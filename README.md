@@ -40,15 +40,16 @@ Autoriser l'accès depuis internet au load-balancer (NAT du port 80)
 Autoriser l'accès au poste Windows 10 depuis internet (NAT du port 3389)
 Plan d'adressage:
 
-VNET-HUB : 10.120.0.0/22
-SNET-FW-EXT : 10.120.0.0/28
-SNET-FW-INT : 10.120.0.16/28
-VNET-CLIENT : 10.120.4.0/22
-SNET-CLIENT : 10.120.4.0/24
-VNET-SERVER : 10.120.8.0/22
-SNET-SERVER : 10.120.8.0/24
-SNET-LB : 10.120.9.0/24
-Modalités pédagogiques
+- VNET-HUB : 10.120.0.0/22
+- SNET-FW-EXT : 10.120.0.0/28
+- SNET-FW-INT : 10.120.0.16/28
+- VNET-CLIENT : 10.120.4.0/22
+- SNET-CLIENT : 10.120.4.0/24
+- VNET-SERVER : 10.120.8.0/22
+- SNET-SERVER : 10.120.8.0/24
+- SNET-LB : 10.120.9.0/24
+
+## Modalités pédagogiques
 Travail en groupe pour l'ensemble de la promotion : partager au maximum les savoirs individuels pour faire progresser le collectif.
 
 ## Modalités d'évaluation
